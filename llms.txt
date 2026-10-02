@@ -1,0 +1,62 @@
+# BP Answer Engine Optimization Company LLC (BP AEO)
+
+> BP AEO helps small businesses get recommended by AI assistants and AI shopping agents. When a customer asks ChatGPT, Claude, Google Gemini, Meta AI, Grok, Perplexity, or Meta's Muse "who should I buy from," we make sure the business is in the answer. Based in Boston, MA. A BP AI LLC company.
+
+## What we do
+
+Answer Engine Optimization (AEO) is the work of making a business easy for AI models to find, understand, and recommend. It is the next step after SEO: instead of ranking in a list of links, the goal is to be named in the AI's answer, which usually includes only two or three businesses.
+
+Our service has three parts:
+
+1. Audit: We check whether ChatGPT, Claude, and other AI tools currently mention the business, and who they recommend instead.
+2. Build: We optimize the existing website, or build a new one, with the structured data, attributes, and content AI models read: business details, services, products, FAQs, reviews, and location. This includes schema.org markup, clean page structure, and an llms.txt file.
+3. Update daily: We track what customers are asking AI in the business's category and update the site's attributes and content daily so it keeps showing up.
+
+## Who it is for
+
+Small and local businesses in the United States that want to be recommended when customers ask AI tools for a suggestion. Examples: restaurants, bakeries, salons, contractors, dentists, law firms, fitness studios, retail shops, and professional services.
+
+## Deliverables
+
+- AI visibility audit across major assistants (ChatGPT, Claude, Gemini, Meta AI, Grok, Perplexity, Muse)
+- Website built or upgraded for AI readability: schema markup, clean structure, llms.txt
+- Business attributes and categories tuned to what customers actually ask
+- Daily updates based on trending questions in the business's category
+- Monthly report showing where the business appears in AI answers and how that is changing
+- One point of contact, no long-term contracts
+
+## How to get started
+
+Book a free AI Visibility Check. On the call we show the owner what ChatGPT, Claude, and Gemini say today when customers ask about businesses like theirs.
+
+- Booking: https://calendly.com/ben-peri3605/ai-visibility-check
+- Email: ben.peri3605@gmail.com
+
+## Frequently asked questions
+
+- What is Answer Engine Optimization? Making a business easy for AI assistants to find, understand, and recommend.
+- Is this different from SEO? Yes, and they work together. SEO ranks you in a list of links. AEO gets you named in the AI's answer. Most AEO work also helps Google ranking.
+- Do I need a new website? Not always. A site in good shape is upgraded in place. A slow or outdated site is rebuilt.
+- Can you guarantee a business will show up on ChatGPT? No one can guarantee what an AI says. We build and maintain the site to give the strongest possible chance and report results monthly.
+- How fast will results show? Site changes go live in the first few weeks. Each AI platform refreshes on its own schedule. The monthly report shows where things stand.
+
+## Company
+
+- Legal name: BP Answer Engine Optimization Company LLC
+- Short name: BP AEO
+- Parent company: BP AI LLC
+- Location: Boston, Massachusetts, USA
+- Contact: ben.peri3605@gmail.com
+
+## Pages
+
+- [Home](/): Overview of the service, how it works, why AEO matters now, platforms covered, FAQ
+- [How It Works](/#how): The three-step process: audit, build, update daily
+- [Why Now](/#why): Old way (search engine) vs. new way (answer engine)
+- [Platforms](/#platforms): The AI assistants and shopping agents we optimize for
+- [FAQ](/#faq): Common questions from business owners
+- [Book a call](/#book): Free AI Visibility Check
+
+## Optional
+
+- Stats cited on the site: 77% of U.S. consumers used AI to help with a shopping or purchase decision in the last six months (Exploding Topics / Semrush, April 2026); AI-referred traffic to U.S. retailers converted 42% better than other traffic (Adobe Analytics, March 2026); Meta's Muse AI shopping agent reached #1 on the U.S. App Store within a week of launch (September 2026).
