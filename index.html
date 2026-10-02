@@ -9,7 +9,7 @@
 <meta property="og:title" content="BP AEO: Get your business recommended by AI">
 <meta property="og:description" content="When customers ask ChatGPT, Claude, or an AI shopping agent who to buy from, we make sure your small business is in the answer.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#E7EDF6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
@@ -142,12 +142,12 @@ img, svg { max-width: 100%; }
 .textlink span { border-bottom: 1px solid var(--navy-line); transition: border-color .15s ease; }
 .textlink:hover span { border-color: var(--on-dark); }
 
-/* Nav: white bar so it reads as its own element above the dark hero */
+/* Nav: tinted bar so it reads as its own element over both the dark hero and the white sections */
 .nav {
   position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
-  box-shadow: 0 1px 0 rgba(11,18,32,.02), 0 8px 24px -16px rgba(11,18,32,.25);
+  background: #E7EDF6;
+  border-bottom: 1px solid #C9D3E2;
+  box-shadow: 0 8px 24px -18px rgba(11,18,32,.35);
   color: var(--ink);
 }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 68px; }
@@ -158,31 +158,37 @@ img, svg { max-width: 100%; }
 .logo__name { font-weight: 700; font-size: 1.1875rem; letter-spacing: -0.02em; }
 .logo__sub { font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.02em; color: var(--ink-3); margin-top: 2px; }
 .footer__brand .logo__sub { color: var(--on-dark-2); }
-.nav__links { display: none; list-style: none; margin: 0; padding: 0; gap: 4px; }
+.nav__links { display: none; list-style: none; margin: 0; padding: 4px; gap: 4px; background: rgba(255,255,255,.55); border: 1px solid #C9D3E2; border-radius: 999px; }
 .nav__links a {
-  display: inline-block; padding: 8px 12px; border-radius: 8px;
-  color: var(--ink-2); text-decoration: none; font-size: 0.9375rem; font-weight: 500;
-  transition: color .15s ease, background-color .15s ease;
+  display: inline-block; padding: 8px 16px; border-radius: 999px;
+  color: var(--ink-2); text-decoration: none; font-size: 0.9375rem; font-weight: 600;
+  transition: color .15s ease, background-color .15s ease, box-shadow .15s ease;
 }
-.nav__links a:hover { color: var(--ink); background: var(--mist); }
+.nav__links a:hover { color: var(--ink); background: #FFFFFF; }
+.nav__links a.is-active { color: var(--accent); background: #FFFFFF; box-shadow: 0 1px 2px rgba(11,18,32,.08), inset 0 0 0 1px #C9D3E2; }
 .nav__cta { display: none; }
 .menu-btn {
   display: inline-flex; align-items: center; justify-content: center;
   width: 44px; height: 44px; margin-right: -10px;
   background: transparent; border: 0; border-radius: 8px; color: var(--ink); cursor: pointer;
 }
-.menu-btn:hover { background: var(--mist); }
+.menu-btn { background: #FFFFFF; border: 1px solid #C9D3E2; }
+.menu-btn:hover { background: #FFFFFF; }
 .menu-btn svg { width: 22px; height: 22px; }
 .menu-btn .icon-close { display: none; }
 .menu-btn[aria-expanded="true"] .icon-open { display: none; }
 .menu-btn[aria-expanded="true"] .icon-close { display: block; }
 
-.mobile-menu { border-top: 1px solid var(--line); padding-block: 12px 20px; background: var(--paper); }
+.mobile-menu { border-top: 1px solid #C9D3E2; padding-block: 12px 20px; background: #E7EDF6; }
 .mobile-menu ul { list-style: none; margin: 0 0 16px; padding: 0; display: grid; }
 .mobile-menu a:not(.btn) {
-  display: block; padding: 12px 0; color: var(--ink); text-decoration: none; font-size: 1.0625rem; font-weight: 500;
-  border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px; margin-bottom: 8px; border-radius: 10px;
+  background: #FFFFFF; border: 1px solid #C9D3E2;
+  color: var(--ink); text-decoration: none; font-size: 1.0625rem; font-weight: 600;
 }
+.mobile-menu a:not(.btn)::after { content: "\2192"; color: var(--ink-3); }
+.mobile-menu a:not(.btn).is-active { color: var(--accent); border-color: var(--accent); }
 .mobile-menu .btn { width: 100%; }
 
 @media (min-width: 900px) {
@@ -844,6 +850,21 @@ img, svg { max-width: 100%; }
       a.rel = 'noopener';
     }
   });
+
+  // Highlight the nav link for the section currently on screen
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav__links a[href^="#"], .mobile-menu a[href^="#"]'));
+  var sections = ['how', 'why', 'platforms', 'faq'].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  function setActive(id) {
+    navLinks.forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('href') === '#' + id); });
+  }
+  if ('IntersectionObserver' in window && sections.length) {
+    var current = '';
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { current = en.target.id; setActive(current); } });
+      if (window.scrollY < 200) setActive('');
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
 
   // Year
   var y = document.getElementById('year');
